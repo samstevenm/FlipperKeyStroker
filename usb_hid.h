@@ -12,6 +12,7 @@
 #include "views/usb_hid_keyboard.h"
 #include "views/usb_hid_media.h"
 #include "views/usb_hid_mouse.h"
+#include "views/usb_hid_stroker.h"
 
 typedef struct {
     Gui* gui;
@@ -23,6 +24,7 @@ typedef struct {
     UsbHidKeyboard* usb_hid_keyboard;
     UsbHidMedia* usb_hid_media;
     UsbHidMouse* usb_hid_mouse;
+    UsbHidStroker* usb_hid_stroker;
     uint32_t view_id;
 } UsbHid;
 
@@ -32,5 +34,6 @@ typedef enum {
     UsbHidViewKeyboard,
     UsbHidViewMedia,
     UsbHidViewMouse,
+    UsbHidViewStroker,
     UsbHidViewExitConfirm,
 } UsbHidView;

@@ -6,3 +6,6 @@ How it works: https://twitter.com/hookgab/status/1572537933210718211
 Credits:
 
 All the good people that made the [BT HID remote](https://github.com/flipperdevices/flipperzero-firmware/tree/873e1f114b7ca55a72dc68bf1b1fa6d169e7c17e/applications/plugins/bt_hid_app) and the [USB Mouse](https://github.com/flipperdevices/flipperzero-firmware/tree/873e1f114b7ca55a72dc68bf1b1fa6d169e7c17e/applications/debug/usb_mouse).
+
+
+Forking and adding Stroker functionality. Goal is to allow the Flipper Zero to be used as a USB keystroker that can read from a file of commands and menu titles and send them as keystrokes. This will allow the Flipper Zero to be used as a USB keystroker to send pre-programmed commands to a computer over USB as a HID device.

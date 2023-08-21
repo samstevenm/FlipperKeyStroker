@@ -10,6 +10,7 @@ enum UsbDebugSubmenuIndex {
     UsbHidSubmenuIndexKeyboard,
     UsbHidSubmenuIndexMedia,
     UsbHidSubmenuIndexMouse,
+    UsbHidSubmenuIndexStroker,
 };
 
 void usb_hid_submenu_callback(void* context, uint32_t index) {
@@ -27,6 +28,9 @@ void usb_hid_submenu_callback(void* context, uint32_t index) {
     } else if(index == UsbHidSubmenuIndexMouse) {
         app->view_id = UsbHidViewMouse;
         view_dispatcher_switch_to_view(app->view_dispatcher, UsbHidViewMouse);
+    } else if(index == UsbHidSubmenuIndexStroker) {
+        app->view_id = UsbHidViewStroker;
+        view_dispatcher_switch_to_view(app->view_dispatcher, UsbHidViewStroker);
     }
 }
 
@@ -76,6 +80,8 @@ UsbHid* usb_hid_app_alloc() {
         app->submenu, "Media", UsbHidSubmenuIndexMedia, usb_hid_submenu_callback, app);
     submenu_add_item(
         app->submenu, "Mouse", UsbHidSubmenuIndexMouse, usb_hid_submenu_callback, app);
+    submenu_add_item(
+        app->submenu, "Stroker", UsbHidSubmenuIndexStroker, usb_hid_submenu_callback, app);
     view_set_previous_callback(submenu_get_view(app->submenu), usb_hid_exit);
     view_dispatcher_add_view(
         app->view_dispatcher, UsbHidViewSubmenu, submenu_get_view(app->submenu));
